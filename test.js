@@ -33,6 +33,7 @@ let x = new Manager();
 let user1 = new User("omar", "admin");
 let user2 = new User( "anas", "user");
 let user3 = new User( "yahya", "user");
+
 x.addUser(user1);
 x.addUser(user2);
 x.addUser(user3);
