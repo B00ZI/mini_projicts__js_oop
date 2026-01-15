@@ -1,58 +1,57 @@
-
-class User{
- 
-    constructor( id , name , role){
-
-        this.id = id 
-        this.name = name
-        this.role = role
-    }
+class User {
+  constructor( name, role) {
     
-    display(){
-        return(
+    this.name = name;
+    this.role = role;
+  }
 
-            "user id : " + this.id +
-            "\nuser name : " + this.name +
-            "\nuser role : " + this.role
-
-        )
-    }
+  display() {
+    return (
+    
+      "user name : " +
+      this.name +
+      "\nuser role : " +
+      this.role
+    );
+  }
 }
 
 
+class Manager {
+  #users = [];
 
-// const user =  new User(1 , "yahya" , "admine")
-// console.log(user.display())
+  addUser(user) {
+    this.#users.push(user);
+  }
 
-
-class Manager{
-
-    #users = []
-    
-    addUser(user){
-        
-     this.#users.push(user)  
-
-    }
-    
-    show(){
-        return this.#users
-    }
-
+  show() {
+    return this.#users;
+  }
 }
 
+let x = new Manager();
+let user1 = new User("omar", "admin");
+let user2 = new User( "anas", "user");
+let user3 = new User( "yahya", "user");
+x.addUser(user1);
+x.addUser(user2);
+x.addUser(user3);
 
-let x = new Manager()
-let user1 = new User(4,"yonm","omo")
-let user2 = new User(3,"dfasd","asdf")
-let user3 = new User(5,"ssw","omsdfo")
-x.addUser(user1)
-x.addUser(user2)
-x.addUser(user3)
+let users = x.show();
+
+const ul = document.getElementById("ul");
 
 
-console.log( x.show())
+for (let i = 0; i < users.length; i++) {
+  const li = document.createElement("li");
 
+   li.textContent = users[i].name + " - " + users[i].role
+   if(users[i].role === "admin"){
+
+    li.classList.add("special-user")
+   }
+   ul.appendChild(li)
+}
 
 // Mini-Project – User Management
 
@@ -61,7 +60,6 @@ console.log( x.show())
 // name
 // role
 // a method display().
-
 
 // Create a Manager class that manages a list of users.
 // Add a method addUser().
