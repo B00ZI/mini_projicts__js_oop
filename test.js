@@ -53,23 +53,3 @@ for (let i = 0; i < users.length; i++) {
    }
    ul.appendChild(li)
 }
-
-// Mini-Project – User Management
-
-// Create a User class containing:
-
-// name
-// role
-// a method display().
-
-// Create a Manager class that manages a list of users.
-// Add a method addUser().
-// Display the user list in an HTML page.
-// Highlight users with the Admin role.
-
-// Bonus Questions
-
-// Add functionality to delete a user.
-// Save the user list to localStorage.
-// Display the total number of users and administrators.
-// Claude is AI and can make mistakes. Please double-check responses.
